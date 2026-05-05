@@ -65,7 +65,7 @@ public class GiftCardsPage extends BasePage {
         type(receiverLastName, "User");
         type(receiverEmail, "receiver@gmail.com");
 
-        // NO EMOJI — IMPORTANT
+       
         type(messageBox, "Happy Birthday. Enjoy your gift.");
     }
 
