@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="UrbanLadder Hackathon Suite">
+
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="All Tests">
+        <classes>
+            <class name="tests.TC01_Bookshelves_Test"/>
+            <class name="tests.TC02_Collections_Test"/>
+            <class name="tests.TC03_GiftCard_Test"/>
+            <class name="tests.TC04_StudyChair_Test"/>
+        </classes>
+    </test>
+
+</suite>
