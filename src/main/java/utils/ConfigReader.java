@@ -1,24 +1,29 @@
 package utils;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties prop;
+    private static final Properties props = new Properties();
 
     static {
-        try {
-            prop = new Properties();
-            FileInputStream fis =
-                    new FileInputStream("src/main/resources/config.properties");
-            prop.load(fis);
+        try (InputStream is = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties")) {
+            if (is != null) props.load(is);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static String get(String key) {
-        return prop.getProperty(key);
+    public static String get(String key, String defaultValue) {
+        return props.getProperty(key, defaultValue);
+    }
+
+    public static long getLong(String key, long defaultValue) {
+        try {
+            return Long.parseLong(props.getProperty(key));
+        } catch (Exception e) {
+            return defaultValue;
+        }
     }
 }

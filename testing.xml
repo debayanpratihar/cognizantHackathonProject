@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="UrbanLadder Hackathon Suite">
+<suite name="TestSuite">
 
     <listeners>
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-    <test name="All Tests">
+    <test name="UrbanLadder Hackathon">
         <classes>
             <class name="tests.TC01_Bookshelves_Test"/>
             <class name="tests.TC02_Collections_Test"/>

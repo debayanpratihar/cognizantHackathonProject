@@ -2,103 +2,83 @@ package pages;
 
 import base.BasePage;
 import models.Product;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.DataParser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductListingPage extends BasePage {
 
-    // Common product locators
+    private static final Logger log = LogManager.getLogger(ProductListingPage.class);
+
     private final By productCards = By.cssSelector("div.o0mbO");
-    private final By productName = By.cssSelector("h3.XxwSy");
+    private final By productName  = By.cssSelector("h3.XxwSy");
     private final By sellingPrice = By.cssSelector("div.UYQNp");
 
-    // Sort By Popularity
-    private final By sortByBtn =
-            By.cssSelector("div[role='button'][aria-label='Sort By filter']");
-    private final By popularityOption =
-            By.cssSelector("div[role='radio'][aria-label='Sort by Popularity']");
+    private final By sortByBtn = By.cssSelector("div[role='button'][aria-label='Sort By filter']");
+    private final By popularityOption = By.cssSelector("div[role='radio'][aria-label='Sort by Popularity']");
 
     public ProductListingPage(WebDriver driver) {
         super(driver);
     }
 
-    /* =========================================================
-       STUDY CHAIR USE CASE
-       ========================================================= */
-
-    public void sortByPopularity() {
-        wait.until(ExpectedConditions.elementToBeClickable(sortByBtn)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(popularityOption)).click();
+    public void waitForProducts() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(productCards));
     }
 
+    public void sortByPopularity() {
+        log.info("Sorting by Popularity");
+        wait.until(ExpectedConditions.elementToBeClickable(sortByBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(popularityOption)).click();
+        waitForProducts();
+    }
+
     public List<Product> getTop3Products() {
+        waitForProducts();
         List<Product> result = new ArrayList<>();
         List<WebElement> cards = driver.findElements(productCards);
 
         for (int i = 0; i < Math.min(3, cards.size()); i++) {
             WebElement card = cards.get(i);
-
             String name = card.findElement(productName).getText().trim();
-            int price = Integer.parseInt(
-                    card.findElement(sellingPrice)
-                            .getText()
-                            .replaceAll("[^0-9]", "")
-                            .trim()
-            );
-
+            int price = DataParser.priceToInt(card.findElement(sellingPrice).getText());
             result.add(new Product(name, price));
         }
         return result;
     }
 
-    /* =========================================================
-       BOOKSHELVES USE CASE
-       ========================================================= */
+    /**
+     * TC01 Requirement AFTER applying UI filters:
+     * - We already applied Max Price 15000
+     * - We already applied Storage Type = Open Storage
+     * Now we just pick first 3 items below 15000 and exclude out-of-stock (if visible).
+     */
+    public List<Product> getFirst3ValidBookshelves() {
+        waitForProducts();
 
-    public void displayFirst3ValidBookshelves() {
-
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(productCards));
-
+        List<Product> result = new ArrayList<>();
         List<WebElement> cards = driver.findElements(productCards);
-        int count = 0;
-
-        System.out.println("----- First 3 Bookshelves Below ₹15000 -----");
 
         for (WebElement card : cards) {
-            if (count == 3) break;
+            if (result.size() == 3) break;
 
             try {
                 String name = card.findElement(productName).getText().trim();
+                int price = DataParser.priceToInt(card.findElement(sellingPrice).getText());
+                if (price < 0 || price >= 15000) continue;
 
-                String priceText = card.findElement(sellingPrice)
-                        .getText()
-                        .replaceAll("[^0-9]", "")
-                        .trim();
+                String text = card.getText().toLowerCase();
+                if (text.contains("out of stock")) continue;
 
-                if (priceText.isEmpty()) continue;
-
-                int price = Integer.parseInt(priceText);
-
-                if (price < 15000) {
-                    System.out.println((count + 1) + ". Name  : " + name);
-                    System.out.println("   Price : ₹" + price);
-                    System.out.println("--------------------------------");
-                    count++;
-                }
-
-            } catch (Exception e) {
-                continue;
-            }
+                result.add(new Product(name, price));
+            } catch (Exception ignored) {}
         }
 
-        if (count == 0) {
-            System.out.println("No bookshelves found below ₹15000.");
-        }
+        log.info("Bookshelves matched count: {}", result.size());
+        return result;
     }
 }

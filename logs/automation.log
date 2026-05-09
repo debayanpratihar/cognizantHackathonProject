@@ -1,0 +1,122 @@
+2026-05-09 15:31:32 INFO  TC01_Bookshelves_Test - ========== Test Setup Started ==========
+2026-05-09 15:31:36 INFO  TC01_Bookshelves_Test - Browser launched successfully
+2026-05-09 15:31:36 INFO  TC01_Bookshelves_Test - ========================================
+2026-05-09 15:31:36 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:31:51 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:31:51 INFO  HomePage - Searching for: Bookshelves
+2026-05-09 15:31:51 INFO  FilterDrawerPage - Opening filter drawer
+2026-05-09 15:31:52 INFO  FilterDrawerPage - Opening price accordion
+2026-05-09 15:31:52 INFO  FilterDrawerPage - Triggering slider (small move) to activate filter state
+2026-05-09 15:31:53 INFO  FilterDrawerPage - Setting max price input to 15000
+2026-05-09 15:31:53 INFO  FilterDrawerPage - Applying filter
+2026-05-09 15:31:54 INFO  ProductListingPage - Bookshelves matched count: 0
+2026-05-09 15:31:54 INFO  TC01_Bookshelves_Test - ---- TC01 Output ----
+2026-05-09 15:31:55 INFO  TC01_Bookshelves_Test - ========== Test Teardown Started ==========
+2026-05-09 15:31:56 ERROR TC01_Bookshelves_Test - Test Failed: displayBookshelvesBelow15000_Open_ExcludeOOS | Screenshot saved: null
+2026-05-09 15:31:58 INFO  TC01_Bookshelves_Test - Browser closed successfully
+2026-05-09 15:31:58 INFO  TC01_Bookshelves_Test - =========================================
+2026-05-09 15:31:58 INFO  TC01_Bookshelves_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:31:58 INFO  TC02_Collections_Test - ========== Test Setup Started ==========
+2026-05-09 15:32:00 INFO  TC02_Collections_Test - Browser launched successfully
+2026-05-09 15:32:00 INFO  TC02_Collections_Test - ========================================
+2026-05-09 15:32:00 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:32:21 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:32:21 INFO  CollectionsPage - Found top categories: 14
+2026-05-09 15:32:26 INFO  CollectionsPage - Collected mega menu items: 191
+2026-05-09 15:32:26 INFO  TC02_Collections_Test - Collected menu items count: 191
+2026-05-09 15:32:26 INFO  TC02_Collections_Test - ========== Test Teardown Started ==========
+2026-05-09 15:32:26 INFO  TC02_Collections_Test - Test Passed: collectionsTest
+2026-05-09 15:32:30 INFO  TC02_Collections_Test - Browser closed successfully
+2026-05-09 15:32:30 INFO  TC02_Collections_Test - =========================================
+2026-05-09 15:32:30 INFO  TC02_Collections_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:32:30 INFO  TC03_GiftCard_Test - ========== Test Setup Started ==========
+2026-05-09 15:32:32 INFO  TC03_GiftCard_Test - Browser launched successfully
+2026-05-09 15:32:32 INFO  TC03_GiftCard_Test - ========================================
+2026-05-09 15:32:32 INFO  GiftCardsPage - Opening gift card page: https://urbanladder.woohoo.in/en-gb/digital/urban-ladder-e-gift-card
+2026-05-09 15:32:37 INFO  GiftCardsPage - Filling denomination and quantity
+2026-05-09 15:32:38 INFO  GiftCardsPage - Selecting first theme image
+2026-05-09 15:32:38 INFO  GiftCardsPage - Filling sender details
+2026-05-09 15:32:38 INFO  GiftCardsPage - Filling receiver details with INVALID email
+2026-05-09 15:32:39 INFO  GiftCardsPage - Clicking Preview (JS click)
+2026-05-09 15:33:10 WARN  GiftCardsPage - No receiver email error found (UI may differ).
+2026-05-09 15:33:10 INFO  TC03_GiftCard_Test - Captured Error: 
+2026-05-09 15:33:10 INFO  TC03_GiftCard_Test - ========== Test Teardown Started ==========
+2026-05-09 15:33:10 ERROR TC03_GiftCard_Test - Test Failed: giftCardInvalidEmailCaptureError | Screenshot saved: null
+2026-05-09 15:33:12 INFO  TC03_GiftCard_Test - Browser closed successfully
+2026-05-09 15:33:12 INFO  TC03_GiftCard_Test - =========================================
+2026-05-09 15:33:12 INFO  TC03_GiftCard_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:33:12 INFO  TC04_StudyChair_Test - ========== Test Setup Started ==========
+2026-05-09 15:33:13 INFO  TC04_StudyChair_Test - Browser launched successfully
+2026-05-09 15:33:13 INFO  TC04_StudyChair_Test - ========================================
+2026-05-09 15:33:13 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:33:22 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:33:22 INFO  HomePage - Searching for: Study Chair
+2026-05-09 15:33:22 INFO  ProductListingPage - Sorting by Popularity
+2026-05-09 15:33:24 INFO  TC04_StudyChair_Test - ========== Test Teardown Started ==========
+2026-05-09 15:33:24 INFO  TC04_StudyChair_Test - Test Passed: printTop3StudyChairsByPopularity
+2026-05-09 15:33:26 INFO  TC04_StudyChair_Test - Browser closed successfully
+2026-05-09 15:33:26 INFO  TC04_StudyChair_Test - =========================================
+2026-05-09 15:33:26 INFO  TC04_StudyChair_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:40:31 INFO  TC01_Bookshelves_Test - ========== Test Setup Started ==========
+2026-05-09 15:40:34 INFO  TC01_Bookshelves_Test - Browser launched successfully
+2026-05-09 15:40:34 INFO  TC01_Bookshelves_Test - ========================================
+2026-05-09 15:40:34 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:40:44 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:40:44 INFO  HomePage - Searching for: Bookshelves
+2026-05-09 15:40:44 INFO  FilterDrawerPage - Opening filter drawer
+2026-05-09 15:40:45 INFO  FilterDrawerPage - Opening Price accordion
+2026-05-09 15:40:45 INFO  FilterDrawerPage - Triggering slider state (small move)
+2026-05-09 15:40:46 INFO  FilterDrawerPage - Setting max price = 15000
+2026-05-09 15:40:46 INFO  FilterDrawerPage - Opening Storage Type accordion
+2026-05-09 15:40:46 INFO  FilterDrawerPage - Selecting Open Storage
+2026-05-09 15:40:46 INFO  FilterDrawerPage - Clicking Apply Filter
+2026-05-09 15:40:47 INFO  ProductListingPage - Bookshelves matched count: 3
+2026-05-09 15:40:47 INFO  TC01_Bookshelves_Test - ---- TC01 Output ----
+2026-05-09 15:40:47 INFO  TC01_Bookshelves_Test - 1. Paxton Bookshelf in Amber Walnut Finish | ₹7999
+2026-05-09 15:40:47 INFO  TC01_Bookshelves_Test - 2. Tetris Solid Wood Bookshelf in Walnut Finish | ₹6999
+2026-05-09 15:40:47 INFO  TC01_Bookshelves_Test - 3. Austen Bookshelf Display Unit 45 Book Capacity Finish Amber Walnut | ₹9999
+2026-05-09 15:40:48 INFO  TC01_Bookshelves_Test - ========== Test Teardown Started ==========
+2026-05-09 15:40:48 INFO  TC01_Bookshelves_Test - Test Passed: displayBookshelvesBelow15000_Open_ExcludeOOS
+2026-05-09 15:40:50 INFO  TC01_Bookshelves_Test - Browser closed successfully
+2026-05-09 15:40:50 INFO  TC01_Bookshelves_Test - =========================================
+2026-05-09 15:40:50 INFO  TC01_Bookshelves_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:40:50 INFO  TC02_Collections_Test - ========== Test Setup Started ==========
+2026-05-09 15:40:52 INFO  TC02_Collections_Test - Browser launched successfully
+2026-05-09 15:40:52 INFO  TC02_Collections_Test - ========================================
+2026-05-09 15:40:52 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:41:03 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:41:03 INFO  CollectionsPage - Found top categories: 14
+2026-05-09 15:41:07 INFO  CollectionsPage - Collected mega menu items: 191
+2026-05-09 15:41:07 INFO  TC02_Collections_Test - Collected menu items count: 191
+2026-05-09 15:41:07 INFO  TC02_Collections_Test - ========== Test Teardown Started ==========
+2026-05-09 15:41:07 INFO  TC02_Collections_Test - Test Passed: collectionsTest
+2026-05-09 15:41:09 INFO  TC02_Collections_Test - Browser closed successfully
+2026-05-09 15:41:09 INFO  TC02_Collections_Test - =========================================
+2026-05-09 15:41:09 INFO  TC02_Collections_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:41:09 INFO  TC03_GiftCard_Test - ========== Test Setup Started ==========
+2026-05-09 15:41:11 INFO  TC03_GiftCard_Test - Browser launched successfully
+2026-05-09 15:41:11 INFO  TC03_GiftCard_Test - ========================================
+2026-05-09 15:41:11 INFO  GiftCardsPage - Opening gift card page: https://urbanladder.woohoo.in/en-gb/digital/urban-ladder-e-gift-card
+2026-05-09 15:41:16 INFO  GiftCardsPage - Filling denomination and quantity
+2026-05-09 15:41:16 INFO  GiftCardsPage - Selecting first theme image
+2026-05-09 15:41:16 INFO  GiftCardsPage - Filling sender details
+2026-05-09 15:41:17 INFO  GiftCardsPage - Filling receiver details (INVALID email)
+2026-05-09 15:41:17 INFO  GiftCardsPage - Clicking Preview (JS click)
+2026-05-09 15:41:48 INFO  TC03_GiftCard_Test - Captured Error: Please enter Receiver's Email Address
+2026-05-09 15:41:48 INFO  TC03_GiftCard_Test - ========== Test Teardown Started ==========
+2026-05-09 15:41:48 INFO  TC03_GiftCard_Test - Test Passed: giftCardInvalidEmailCaptureError
+2026-05-09 15:41:50 INFO  TC03_GiftCard_Test - Browser closed successfully
+2026-05-09 15:41:50 INFO  TC03_GiftCard_Test - =========================================
+2026-05-09 15:41:50 INFO  TC03_GiftCard_Test - ========== Test Teardown Completed ==========
+2026-05-09 15:41:50 INFO  TC04_StudyChair_Test - ========== Test Setup Started ==========
+2026-05-09 15:41:52 INFO  TC04_StudyChair_Test - Browser launched successfully
+2026-05-09 15:41:52 INFO  TC04_StudyChair_Test - ========================================
+2026-05-09 15:41:52 INFO  HomePage - Opening URL: https://www.urbanladder.com/
+2026-05-09 15:42:02 INFO  HomePage - Home page loaded successfully
+2026-05-09 15:42:02 INFO  HomePage - Searching for: Study Chair
+2026-05-09 15:42:02 INFO  ProductListingPage - Sorting by Popularity
+2026-05-09 15:42:04 INFO  TC04_StudyChair_Test - ========== Test Teardown Started ==========
+2026-05-09 15:42:04 INFO  TC04_StudyChair_Test - Test Passed: printTop3StudyChairsByPopularity
+2026-05-09 15:42:06 INFO  TC04_StudyChair_Test - Browser closed successfully
+2026-05-09 15:42:06 INFO  TC04_StudyChair_Test - =========================================
+2026-05-09 15:42:06 INFO  TC04_StudyChair_Test - ========== Test Teardown Completed ==========
