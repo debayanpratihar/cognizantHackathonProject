@@ -21,7 +21,7 @@ public class BaseTest {
 
         driver = DriverFactory.getDriver();
 
-        // ✅ Best practice: use explicit waits only (keep implicit wait = 0)
+        //use explicit waits only (keep implicit wait = 0)
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
